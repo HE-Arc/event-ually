@@ -11,6 +11,10 @@ class ParticipateTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('participates')->insert([
+            'idUser' =>1,
+            'idEvent' => 1
+
+        ]);
     }
 }
