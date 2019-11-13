@@ -1,47 +1,13 @@
-@extends('template')
+@extends('layouts.app')
 
 @section('content')
     <div class="flex-container">
-        <div class="flex-item">
-            <p>EVENT</p>
-            <button type="button">Détails</button>
-        </div>
-        <div class="flex-item">
-            <p>EVENT</p>
-            <button type="button">Détails</button>
-        </div>
-        <div class="flex-item">
-            <p>EVENT</p>
-            <button type="button">Détails</button>
-        </div>
-        <div class="flex-item">
-            <p>EVENT</p>
-            <button type="button">Détails</button>
-        </div>
-        <div class="flex-item">
-            <p>EVENT</p>
-            <button type="button">Détails</button>
-        </div>
-
-        <div class="flex-item">
-            <p>EVENT</p>
-            <button type="button">Détails</button>
-        </div>
-        <div class="flex-item">
-            <p>EVENT</p>
-            <button type="button">Détails</button>
-        </div>
-        <div class="flex-item">
-            <p>EVENT</p>
-            <button type="button">Détails</button>
-        </div>
-        <div class="flex-item">
-            <p>EVENT</p>
-            <button type="button">Détails</button>
-        </div>
-        <div class="flex-item">
-            <p>EVENT</p>
-            <button type="button">Détails</button>
-        </div>
+        @foreach ($events as $event)
+            <div class="flex-item">
+                <p>{!! $event->name !!}</p>
+                <button type="button">Détails</button>
+            </div>
+        @endforeach
     </div>
+    <div>{!! $events->links() !!}</div>
 @endsection
