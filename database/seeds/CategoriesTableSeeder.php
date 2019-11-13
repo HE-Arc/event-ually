@@ -12,8 +12,13 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         DB::table('categories')->insert([
-            'name' => 'Neutral'
-
+            ['name' => 'Neutre'],
+            ['name' => 'Romantique'],
+            ['name' => 'Sport'],
+            ['name' => 'Loisirs'],
+            ['name' => 'Relax'],
+            ['name' => 'Festival'],
+            ['name' => 'Education']
         ]);
     }
 }
