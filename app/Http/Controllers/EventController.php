@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class EventController extends Controller
 {
-    public function index($id){
+    public function show($id){
         $event = DB::table('events')->where('id',$id)->first();
         return view('event', ['event' => $event]);
     }
