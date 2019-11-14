@@ -25,6 +25,33 @@
   margin: 50px;
 }
 
+.dateEvent {
+  display: inline-block;
+  margin-left: 5px;
+
+}
+
+.descriptionEvent{
+  width:400px;
+  border-bottom: #040505 2px solid;
+}
+
+.nameEvent{
+  border-bottom: #040505 2px solid;
+}
+
+.placeEvent{
+
+  float: left;
+  width:210px;
+  border-bottom: #040505 2px solid;
+
+
+
+}
+
+
+
 :root {
   --blue: #3490dc;
   --indigo: #6574cd;
