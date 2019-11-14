@@ -9,7 +9,7 @@
                 <p class="placeEvent">Localisation: {!! $event->place !!}</p>
                 <p class="dateEvent">,le {!! $newDate = preg_replace("/(\d+)\D+(\d+)\D+(\d+)/","$3-$2-$1",$event->date) !!}</p>
                 <p></p>
-                <button type="button">Détails</button>
+                <a href='events/{{$event->id}}'>Détails</a>
             </div>
         @endforeach
     </div>
