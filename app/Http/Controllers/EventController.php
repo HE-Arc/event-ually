@@ -11,4 +11,9 @@ class EventController extends Controller
         $event = DB::table('events')->where('id',$id)->first();
         return view('event', ['event' => $event]);
     }
+
+    public function createEvent()
+    {
+        return view('createEvent');
+    }
 }
