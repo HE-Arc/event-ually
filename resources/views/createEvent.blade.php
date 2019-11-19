@@ -1,18 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-<form action="EventController" method="POST">
-<h3>Créer événement</h1>
+  <h1>Créez un événement</h1>
+  {!! Form::open(array('action' => 'EventController@storeEvent', 'files' => true)) !!}
+  {!! Form::label('name', 'Nom de l\'événement: ') !!}
+  {!! Form::text('name') !!}
 
-  Nom de l'événement:<br>
-  <input type="text" name="name">
-  <br>Description:<br>
-  <input type="text" name="description">
-  <br>Endroit:<br>
-  <input type="text" name="place">
-  <br>Date:<br>
-  <input type="date" name="date">
-  <br></br>
-  <input type="submit">
-</form>
+  {!! Form::label('descritpion', 'Description: ') !!}
+  {!! Form::text('descritpion') !!}
+  
+  {!! Form::label('place', 'Lieu: ') !!}
+  {!! Form::text('place') !!}
+  
+  {!! Form::label('date', 'Date: ') !!}
+  {!! Form::date('date') !!}
+
+  {!! Form::submit('Créer !') !!}
+  {!! Form::close() !!}
 @endsection

@@ -27,4 +27,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('events/{id}','EventController@show');
 
 Route::get('createEvent','EventController@createEvent')->name('createEvent');
-
+Route::post('createEvent', 'EventController@storeEvent');
