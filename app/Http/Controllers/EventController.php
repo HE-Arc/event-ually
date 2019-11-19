@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+use App\Event;
+
 class EventController extends Controller
 {
     public function show($id){
@@ -17,8 +19,18 @@ class EventController extends Controller
         return view('createEvent');
     }
 
-    public function storeEvent()
+    public function storeEvent(Request $request)
     {
-        
+        DB::table('events')->insert(
+            ['name' => $request->name, 
+            'description' => $request->description, 
+            'place' => $request->place, 
+            'date' => $request->date,
+            'idCategory' => $request->category,
+            'idUser' => 1
+            ]
+        );
+
+        return redirect('/');
     }
 }
