@@ -27,7 +27,7 @@ class EventController extends Controller
             'place' => $request->place, 
             'date' => $request->date,
             'idCategory' => $request->category,
-            'idUser' => 1
+            'idUser' => auth()->user()->id
             ]
         );
 
