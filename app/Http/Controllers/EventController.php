@@ -20,6 +20,16 @@ class EventController extends Controller
         return view('createEvent');
     }
 
+    public function participate($idUser,$id)
+    {
+        DB::table('participates')->insert(
+            ['idUser' => auth()->user()->id,
+             'idEvent' => $id]
+        );
+        return redirect('/');
+
+    }
+
     public function storeEvent(Request $request)
     {
 

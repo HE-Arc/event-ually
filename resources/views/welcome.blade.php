@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="flex-container">
-        @foreach ($events as $event)
+        @foreach ($events ?? '' as $event)
             <div class="flex-item">
                 <p class="nameEvent">{!! $event->name !!}</p>
                 <p class="descriptionEvent">{!! $event->description !!}</p>
@@ -10,6 +10,7 @@
                 <p class="dateEvent"><img src="..\resources\img\calendar.png" width="25px"alt ="Localisation:"> {!! $newDate = preg_replace("/(\d+)\D+(\d+)\D+(\d+)/","$3-$2-$1",$event->date) !!}</p>
                 <p></p>
                 <a href='events/{{$event->id}}'>Détails</a>
+                <a href='events/{{$event->idUser}}/{{$event->id}}'>Je participe</a>
             </div>
         @endforeach
     </div>
