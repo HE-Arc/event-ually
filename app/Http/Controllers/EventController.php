@@ -34,7 +34,7 @@ class EventController extends Controller
             );
             
         }
-        return redirect('/');
+        return redirect()->back();
 
 
     }
@@ -67,6 +67,5 @@ class EventController extends Controller
             ]
         );
 
-        return redirect('/');
-    }
+        return redirect()->back();    }
 }
