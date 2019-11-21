@@ -24,6 +24,7 @@ class EventController extends Controller
     {
         $exists = DB::table('participates')->where('idUser', auth()->user()->id)->where('idEvent',$id)->first(); 
         if($exists) {
+            DB::table('participates')->where('idUser',auth()->user()->id)->where('idEvent',$id)->delete();
         }
         else
         {
