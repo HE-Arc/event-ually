@@ -25,12 +25,13 @@
   margin: 50px;
 }
 
+
 .dateEvent {
   display: inline-block;
   margin-left: 5px;
 
 }
-
+/*
 .descriptionEvent{
   width:400px;
   border-bottom: #040505 2px solid;
@@ -45,11 +46,8 @@
   float: left;
   width:210px;
   border-bottom: #040505 2px solid;
-
-
-
 }
-
+*/
 
 
 :root {

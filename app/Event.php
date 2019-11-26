@@ -4,14 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Participate extends Model
+class Event extends Model
 {
     //table name
-    protected $table = "participates";
+    protected $table = "events";
 
-    //primary key
     public $primaryKey = "id";
-
-    
-
 }
