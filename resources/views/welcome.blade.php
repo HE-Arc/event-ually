@@ -11,7 +11,11 @@
                 <p></p>
                 <a href='events/{{$event->id}}'>Détails</a>
                 @if (Auth::check())
-                <a href='events/{{$event->idUser}}/{{$event->id}}'>Je participe</a>
+                    @if (App\Participate::where('idUser', auth()->user()->id)->where('idEvent', $event->id)->first())
+                        <a href='events/{{$event->idUser}}/{{$event->id}}'>Se désinscrire</a>
+                    @else
+                        <a href='events/{{$event->idUser}}/{{$event->id}}'>S'inscrire</a>
+                    @endif
                 @endif
                 @if (Auth::guest()) 
                 @endif
