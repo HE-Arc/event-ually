@@ -19,6 +19,7 @@ class EventsTableSeeder extends Seeder
             'place' => 'Campus HE-ARC 2',
             'description' => 'Apprendre à utiliser Laravel',
             'date' => Carbon::create('2000', '01', '01'),
+            'image' => '',
             'idCategory' => 1, //neutre
             'idUser' => 1, //admin
             ],
@@ -27,6 +28,7 @@ class EventsTableSeeder extends Seeder
             'place' => 'Nyon',
             'description' => '70eme édition du festival au paléo avec la présence de Grunenwald',
             'date' => Carbon::create('2020', '07', '20'),
+            'image' => '',
             'idCategory' => 6, //festival
             'idUser' => 1, //admin
             ],
@@ -35,6 +37,7 @@ class EventsTableSeeder extends Seeder
                 'place' => 'Chez Frank',
                 'description' => 'File d’attente pour savoir si la routourne va vraiment tourner avec la présence de Ribery',
                 'date' => Carbon::create('2020', '11', '31'),
+                'image' => '',
                 'idCategory' => 4, //loisirs
                 'idUser' => 1, //admin
                 ],
@@ -43,6 +46,7 @@ class EventsTableSeeder extends Seeder
                     'place' => 'En forêt',
                     'description' => 'Cette édition verra s\opposer les magnifiques sélections du Rwanda et le Groenland',
                     'date' => Carbon::create('2020', '11', '31'),
+                    'image' => '',
                     'idCategory' => 3, //sports
                     'idUser' => 1, //admin
                 ],
@@ -51,6 +55,7 @@ class EventsTableSeeder extends Seeder
                     'place' => 'Dans un banc',
                     'description' => 'Et si on inversait les rôles ? Ouvre les yeux et change ton futur !',
                     'date' => Carbon::create('2021', '02', '14'),
+                    'image' => '',
                     'idCategory' =>2, //loisirs
                     'idUser' => 1, //admin
                 ],
@@ -59,6 +64,7 @@ class EventsTableSeeder extends Seeder
                     'place' => 'Suisse',
                     'description' => 'Pour la 1ere fois, cet événement aura lieu en Suisse. Reservez vos places très vite !',
                     'date' => Carbon::create('2021', '08', '10'),
+                    'image' => '',
                     'idCategory' =>5, //relax
                     'idUser' => 1, //admin
                 ],
@@ -67,6 +73,7 @@ class EventsTableSeeder extends Seeder
                     'place' => 'Suisse',
                     'description' => 'Enterrement de notre cher ami Mufasa',
                     'date' => Carbon::create('2021', '01', '01'),
+                    'image' => '',
                     'idCategory' =>1, //neutre
                     'idUser' => 1, //admin
                 ],
@@ -75,6 +82,7 @@ class EventsTableSeeder extends Seeder
                     'place' => 'Autour du pot',
                     'description' => 'Compétition pour voir qui va tenir le plus longtemps en train de tourner autour du pot',
                     'date' => Carbon::create('2020', '05', '05'),
+                    'image' => '',
                     'idCategory' =>3, //sports
                     'idUser' => 1, //admin
                 ],
@@ -83,6 +91,7 @@ class EventsTableSeeder extends Seeder
                     'place' => 'Chez Johhny',
                     'description' => 'Tous ensemble nous pouvons parvenir à aider notre ami Johnny pour qu\'il puisse enfin allumer son feu',
                     'date' => Carbon::create('2020', '10','10'),
+                    'image' => '',
                     'idCategory' =>6, //festival
                     'idUser' => 1, //admin
                 ],
@@ -91,6 +100,7 @@ class EventsTableSeeder extends Seeder
                     'place' => 'Dans la maison de Dark Vador',
                     'description' => 'On va enfin mettre fin à ce mystère avec des révélations exclusives',
                     'date' => Carbon::create('2020', '08','27'),
+                    'image' => '',
                     'idCategory' =>2, //loisirs
                     'idUser' => 1, //admin
                 ],
@@ -99,6 +109,7 @@ class EventsTableSeeder extends Seeder
                     'place' => 'Partout avant Rome',
                     'description' => 'Partez de n\'importe où et vérifiez si tout les chemins mènent à Rome',
                     'date' => Carbon::create('2020', '08','27'),
+                    'image' => '',
                     'idCategory' =>3, //festival
                     'idUser' => 1, //admin
                 ],
@@ -107,6 +118,7 @@ class EventsTableSeeder extends Seeder
                     'place' => 'Gare de Neuchatel',
                     'description' => 'Venez apprendre ce magnifique langage, vous verrez, c\'est quand même cool',
                     'date' => Carbon::create('2021','10','15'),
+                    'image' => '',
                     'idCategory' =>7, //education
                     'idUser' => 1, //admin
                 ],
@@ -115,6 +127,7 @@ class EventsTableSeeder extends Seeder
                     'place' => 'Bureau de Prêtre',
                     'description' => 'As-tu ce qu\'il faut pour passer?',
                     'date' => Carbon::create('2020','09','01'),
+                    'image' => '',
                     'idCategory' =>7, //education
                     'idUser' => 1, //admin
                 ],
@@ -123,6 +136,7 @@ class EventsTableSeeder extends Seeder
                     'place' => 'Partout',
                     'description' => 'On doit tous y passer un moment dans la vie...',
                     'date' => Carbon::create('2020','12','25'),
+                    'image' => '',
                     'idCategory' =>1, //neutral
                     'idUser' => 1, //admin
                 ],
@@ -131,6 +145,7 @@ class EventsTableSeeder extends Seeder
                     'place' => 'Campus HE-Arc 2',
                     'description' => 'C\'est super quand ils s\'éteignent tout seul...',
                     'date' => Carbon::create('2020','12','25'),
+                    'image' => '',
                     'idCategory' =>7, //education
                     'idUser' => 1, //admin
                 ],
