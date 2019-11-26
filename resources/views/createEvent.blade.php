@@ -6,13 +6,13 @@
       <h1>Créez un événement</h1>
       {!! Form::open(array('action' => 'EventController@store', 'files' => true)) !!}
         {!! Form::label('name', 'Nom de l\'événement: ') !!}
-        {!! Form::text('name', 'Suisse-Maroc', ['class' => 'form-control']) !!}
+        {!! Form::text('name', '', ['class' => 'form-control', 'placeholder' => 'Nom de l\'événement']) !!}
 
         {!! Form::label('descritpion', 'Description: ') !!}
-        {!! Form::text('description', 'Finale de la coupe du monde de curling', ['class' => 'form-control']) !!}
+        {!! Form::text('description', '', ['class' => 'form-control', 'placeholder' => 'Description']) !!}
         
         {!! Form::label('place', 'Lieu: ') !!}
-        {!! Form::text('place', 'Neuchâtel', ['class' => 'form-control']) !!}
+        {!! Form::text('place', '', ['class' => 'form-control', 'placeholder' => 'Lieu']) !!}
         
         {!! Form::label('date', 'Date: ') !!}
         {!! Form::date('date', new Datetime('tomorrow'), ['class' => 'form-control']) !!}
