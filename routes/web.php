@@ -25,3 +25,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('events/{id}','EventController@show');
+
+Route::post('search', 'EventController@searchEvent')->name("search");
