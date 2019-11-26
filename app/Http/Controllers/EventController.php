@@ -64,7 +64,7 @@ class EventController extends Controller
         $event->date = $request->input('date');
         $event->idCategory = $request->input('category');
         $path = Storage::putFile('images', $request->file('image'));
-        $event->image = $path;
+        $event->image = 'storage/'.$path;
         $event->idUser = auth()->user()->id;
 
         $event->save();
