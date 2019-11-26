@@ -17,7 +17,7 @@ class EventController extends Controller
         return view('event')->with('event',$event);
     }
 
-    public function createEvent()
+    public function create()
     {
         return view('createEvent');
     }
