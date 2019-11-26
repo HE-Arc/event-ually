@@ -4,26 +4,35 @@
     window.addEventListener('load', function () {
         document.getElementById('search').oninput = async(e) => {
             e.preventDefault();
-            fetch("{{route('search')}}" , {
-                headers: {
-                    "Accept": "application/json",
-                    "Content-Type": "application/json",
-                    "X-CSRF-Token": document.head.querySelector("[name=csrf-token][content]").content
-                },    
-                method: 'post',
-                body: JSON.stringify({searchValue: document.getElementById('search').value })
+            value = document.getElementById('search').value;
+            console.log(value);
+            if(value == "")
+            {value ="null";}
+
+            fetch("search/"+value, {
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "X-CSRF-Token": document.head.querySelector("[name=csrf-token][content]").content
+            },    
+            method: 'get',
+                //body: JSON.stringify({searchValue: document.getElementById('search').value })
             }).then(response => {
                 if (response.ok) {
                     //console.log('Request successful', response); 
+                    
                     response.text().then((htmlText) => {
                         console.log(htmlText);
                         document.querySelector('#EventContainer').innerHTML = htmlText;
                     });
 
+
                 } else {
                     console.log('Error', response);
                 }
             });
+            
+
         }
   })
 </script>
@@ -36,7 +45,7 @@
     </div>
 
     <div id="EventContainer">
-        <div class="flex-container" >
+        <div class="flex-container">
             @foreach ($events as $event)
                 <div class="flex-item">
                     <p class="nameEvent">{!! $event->name !!}</p>

@@ -13,11 +13,25 @@ class EventController extends Controller
     }
 
 
-    public function searchEvent(Request $request)
+    public function searchEvent(Request $request,$value)
     {
-        $value = $request->input('searchValue');
-        $events = DB::table('events')->where('name', 'like', '%'.$value.'%')->paginate(10);
+
+        if($value=="null")
+        {
+            $events = DB::table('events')->paginate(10);
+            $value="";
+        }
+        else
+        {
+            $events = DB::table('events')->where('name', 'like', '%'.$value.'%')->paginate(10);
+        }
+        //https://youtu.be/2U1t9f-64_4?t=494 pour rechercher sur les autres champs
         //$events->withPath("/");
+        if($request->has('page'))
+        {
+            return view('welcome', ['events' => $events]);
+        }
+
         $out = '<div class="flex-container" >';
         foreach($events as $event)
         {
@@ -32,7 +46,6 @@ class EventController extends Controller
         }
         $out .= '</div>';
         $out .= '<div>'. $events->links() .'</div>';
-        $out1 = $events->links();
         return response($out);
     }
 }
