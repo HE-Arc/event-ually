@@ -4,7 +4,7 @@
   <div class="col-sm-6">
     <div class="well">
       <h1>Créez un événement</h1>
-      {!! Form::open(array('action' => 'EventController@storeEvent', 'files' => true)) !!}
+      {!! Form::open(array('action' => 'EventController@store', 'files' => true)) !!}
         {!! Form::label('name', 'Nom de l\'événement: ') !!}
         {!! Form::text('name', 'Suisse-Maroc', ['class' => 'form-control']) !!}
 

@@ -28,7 +28,7 @@ Route::get('events/{id}','EventController@show');
 
 Route::get('events/{idUser}/{id}','EventController@participate');
 
-Route::get('createEvent','EventController@createEvent')->name('createEvent');
-Route::post('createEvent', 'EventController@storeEvent');
+Route::get('create','EventController@create')->name('create');
+Route::post('create', 'EventController@store');
 
 
