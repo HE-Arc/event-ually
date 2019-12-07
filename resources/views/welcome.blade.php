@@ -13,6 +13,7 @@
                 <p></p>
                 <a href='events/{{$event->id}}' class="details">Détails...</a>
                 @if (Auth::check())
+                <p class="memberEvent"><img src="..\resources\img\member.png" width="25px"alt ="Participants:">{{App\Participate::where('idEvent',$event->id)->count()}}</p>
                     @if (App\Participate::where('idUser', auth()->user()->id)->where('idEvent', $event->id)->first())
                         <a href='events/{{$event->idUser}}/{{$event->id}}' class="subscribe">Se désinscrire</a>
                     @else
@@ -21,6 +22,8 @@
                 @endif
                 @if (Auth::guest()) 
                 @endif
+                <a href='events/{{$event->id}}'>Détails</a>
+
             </div>
         @endforeach
     </div>
