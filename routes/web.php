@@ -31,4 +31,4 @@ Route::get('events/{idUser}/{id}','EventController@participate');
 Route::get('create','EventController@create')->name('create');
 Route::post('create', 'EventController@store');
 
-
+Route::get('search/{term}', 'EventController@searchEvent');
