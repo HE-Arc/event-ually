@@ -92,6 +92,7 @@ class EventController extends Controller
         $out = '<div class="flex-container" >';
         foreach($events as $event)
         {
+            /*
             $out .= '<div class="flex-item">';
             $out .= '<p class="nameEvent">'. $event->name .'</p>';
             $out .= '<p class="descriptionEvent">'. $event->description .'</p>';
@@ -101,6 +102,8 @@ class EventController extends Controller
             $route = route("events",[$event->id]);
             $out .= '<a href="'.$route.'">Détails</a>';
             $out .= '</div>';
+            */
+            $out .= view('eventbox',['event' => $event])->render();
         }
         $out .= '</div>';
         $out .= '<div>'. $events->links() .'</div>';
