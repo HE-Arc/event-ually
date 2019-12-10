@@ -20,9 +20,9 @@ class CreateEventsTable extends Migration
             $table->string('description');
             $table->date('date');
             $table->string('image');
-            $table->bigInteger('idUser');
+            $table->bigInteger('idUser')->unsigned();
             $table->foreign('idUser')->references('id')->on('users');
-            $table->bigInteger('idCategory');
+            $table->bigInteger('idCategory')->unsigned();
             $table->foreign('idCategory')->references('id')->on('categories');
             $table->timestamps();
         });
