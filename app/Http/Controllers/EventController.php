@@ -39,10 +39,7 @@ class EventController extends Controller
             $participate->save();
             
         }
-        
         return redirect()->back();
-
-
     }
 
     public function getEventFromIdUser()
@@ -61,7 +58,7 @@ class EventController extends Controller
                 'description' => 'required', 
                 'place' => 'required',
                 'date' => 'required|date',
-                'image' => 'mimes:jpeg,jpg,png'
+                'image' => 'required|mimes:jpeg,jpg,png'
             )
         );
 
