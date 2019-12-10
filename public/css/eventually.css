@@ -21,6 +21,7 @@
   }
 
   .image {
+    float: left;
     width: 128px;
     height: 128px;
     border-radius: 4em;
@@ -47,6 +48,16 @@
     display: inline;
     text-align: center;
     margin-left: 2em;
+  }
+
+  .memberEvent{
+    display: inline;
+    text-align: center;
+    margin-left: 2em;
+  }
+
+  .imageBlock{
+    display: inline;
   }
   
   .descriptionEvent{

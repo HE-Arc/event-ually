@@ -45,7 +45,7 @@ class EventsTableSeeder extends Seeder
             [
                 'name' => 'Finale coupe du monde de pétanque',
                 'place' => 'En forêt',
-                'description' => 'Cette édition verra s\opposer les magnifiques sélections du Rwanda et le Groenland',
+                'description' => 'Cette édition verra s\'opposer les magnifiques sélections du Rwanda et le Groenland',
                 'date' => Carbon::create('2020', '02', '12'),
                 'image' => $faker->imageUrl($width = 480, $height = 480),
                 'idCategory' => 3, //sports
