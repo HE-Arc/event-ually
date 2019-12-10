@@ -30,7 +30,7 @@
                           ['class' => 'form-control']) }}
 
         {{ Form::label('image', 'Image: ') }}
-        {{ Form::file('image', ['class' => 'form-control']) }}
+        {{ Form::file('image', ['class' => 'form-control', 'required']) }}
         
         <br>
         {{ Form::submit('Créer !', ['class' => 'btn btn-primary']) }}
