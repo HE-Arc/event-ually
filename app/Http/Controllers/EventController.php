@@ -39,6 +39,15 @@ class EventController extends Controller
         }
         
         return redirect()->back();
+
+
+    }
+
+    public function getEventFromIdUser()
+    {
+        $events = Event::join('participates','events.id','=','participates.idEvent')->where('participates.idUser',auth()->user()->id)->get();
+        return view('profile',['events'=>$events]);
+
     }
 
     public function store(Request $request)
