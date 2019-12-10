@@ -72,7 +72,7 @@ class EventController extends Controller
     }
 
 
-    public function searchEvent(Request $request,$value)
+    public function searchEvent(Request $request,$value=null)
     {
         if($value=="null")
         {
@@ -89,7 +89,6 @@ class EventController extends Controller
         {
             return view('welcome', ['events' => $events]);
         }
-
         $out = '<div class="flex-container" >';
         foreach($events as $event)
         {
@@ -99,7 +98,8 @@ class EventController extends Controller
             $out .= '<p class="placeEvent">Localisation: '. $event->place .'</p>';
             $out .= '<p class="dateEvent">,le '. $event->date .'</p>';
             $out .= '<p></p>';
-            $out .= '<a href="events/'. $event->id .'">Détails</a>';
+            $route = route("events",[$event->id]);
+            $out .= '<a href="'.$route.'">Détails</a>';
             $out .= '</div>';
         }
         $out .= '</div>';

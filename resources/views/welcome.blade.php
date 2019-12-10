@@ -1,15 +1,17 @@
 @extends('layouts.app')
 
+
 <script>
     window.addEventListener('load', function () {
         document.getElementById('search').oninput = async(e) => {
             e.preventDefault();
             value = document.getElementById('search').value;
-            console.log(value);
             if(value == "")
             {value ="null";}
-
-            fetch("search/"+value, {
+            route = "{{ route('search',['']) }}";
+            route += "/"+value;
+            console.log(route);
+            fetch(route, {
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json",
@@ -18,9 +20,7 @@
             method: 'get',
                 //body: JSON.stringify({searchValue: document.getElementById('search').value })
             }).then(response => {
-                if (response.ok) {
-                    //console.log('Request successful', response); 
-                    
+                if (response.ok) {                    
                     response.text().then((htmlText) => {
                         console.log(htmlText);
                         document.querySelector('#EventContainer').innerHTML = htmlText;
@@ -64,7 +64,7 @@
                     @endif
                     @if (Auth::guest()) 
                     @endif
-                    <a href='events/{{$event->id}}'>Détails</a>
+                    <a href='{{ route("events",[$event->id]) }}'>Détails</a>
                 </div>
             @endforeach
         </div>
