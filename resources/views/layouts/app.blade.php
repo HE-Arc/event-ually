@@ -49,6 +49,9 @@
                                 </li>
                             @endif
                         @else
+                        <li class="nav-item">
+                                <a class="nav-link" href="{{ route('profile') }}">{{ __('Mon profil') }}</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('create') }}">{{ __('Créer événement') }}</a>
                             </li>
