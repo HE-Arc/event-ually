@@ -2,7 +2,6 @@
 
 @section('content')
     <div class="container">
-
         <h1>{{$event->name}}</h1>
         <img src="{{ asset($event->image) }}" alt="Pas d'image" height="256" width="256" class="image"></img>
         <h3>Date</h3>
@@ -11,6 +10,5 @@
         <p>{{$event->place}}</p>
         <h3>Description</h3>
         <p>{{$event->description}}</p>
-
     </div>
 @endsection
