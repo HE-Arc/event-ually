@@ -10,9 +10,11 @@
         <p>{{$event->place}}</p>
         <h3>Description</h3>
         <p>{{$event->description}}</p>
-        <h3>Utilisateurs qui participent:</h3>
-        @foreach($users as $user)
-        <p>{{$user->name}}</p>
-        @endforeach
+        @if (Auth::check())
+            <h3>Utilisateurs qui participent:</h3>
+            @foreach($users as $user)
+                <p>{{$user->name}}</p>
+            @endforeach
+        @endif
     </div>
 @endsection
