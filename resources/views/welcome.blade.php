@@ -17,14 +17,12 @@
                 "X-CSRF-Token": document.head.querySelector("[name=csrf-token][content]").content
             },    
             method: 'get',
-                //body: JSON.stringify({searchValue: document.getElementById('search').value })
             }).then(response => {
                 if (response.ok) {                    
                     response.text().then((htmlText) => {
                         console.log(htmlText);
                         document.querySelector('#EventContainer').innerHTML = htmlText;
                     });
-
 
                 } else {
                     console.log('Error', response);

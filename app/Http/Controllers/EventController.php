@@ -83,8 +83,6 @@ class EventController extends Controller
         {
             $events = DB::table('events')->where('name', 'like', '%'.$value.'%')->paginate(10);
         }
-        //https://youtu.be/2U1t9f-64_4?t=494 pour rechercher sur les autres champs
-        //$events->withPath("/");
         if($request->has('page'))
         {
             return view('welcome', ['events' => $events]);
@@ -92,17 +90,6 @@ class EventController extends Controller
         $out = '<div class="flex-container" >';
         foreach($events as $event)
         {
-            /*
-            $out .= '<div class="flex-item">';
-            $out .= '<p class="nameEvent">'. $event->name .'</p>';
-            $out .= '<p class="descriptionEvent">'. $event->description .'</p>';
-            $out .= '<p class="placeEvent">Localisation: '. $event->place .'</p>';
-            $out .= '<p class="dateEvent">,le '. $event->date .'</p>';
-            $out .= '<p></p>';
-            $route = route("events",[$event->id]);
-            $out .= '<a href="'.$route.'">Détails</a>';
-            $out .= '</div>';
-            */
             $out .= view('eventbox',['event' => $event])->render();
         }
         $out .= '</div>';
