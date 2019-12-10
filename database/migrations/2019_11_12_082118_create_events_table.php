@@ -19,6 +19,7 @@ class CreateEventsTable extends Migration
             $table->string('place');
             $table->string('description');
             $table->date('date');
+            $table->string('image');
             $table->bigInteger('idUser');
             $table->foreign('idUser')->references('id')->on('users');
             $table->bigInteger('idCategory');
