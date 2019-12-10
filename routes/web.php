@@ -31,6 +31,7 @@ Route::get('events/{idUser}/{id}','EventController@participate');
 Route::get('create','EventController@create')->name('create');
 
 Route::get('profile','EventController@getEventFromIdUser')->name('profile');
+
 Route::post('create', 'EventController@store');
 
 Route::get('search/{term}', 'EventController@searchEvent');
