@@ -16,7 +16,9 @@ class EventController extends Controller
     public function show($id)
     {
         $event = Event::find($id);
-        return view('event')->with('event',$event);
+        $users =  Event::join('participates','events.id','=','participates.idEvent')->join('users','users.id','=','participates.idUser')->where('idEvent',$id)->get();
+        return view('event',['event'=>$event,'users'=>$users]);
+
     }
 
     public function create()
@@ -37,9 +39,16 @@ class EventController extends Controller
             $participate->save();
             
         }
-        
         return redirect()->back();
     }
+
+    public function getEventFromIdUser()
+    {
+        $events = Event::join('participates','events.id','=','participates.idEvent')->where('participates.idUser',auth()->user()->id)->get();
+
+        return view('profile',['events'=>$events]);
+    }
+
 
     public function store(Request $request)
     {
@@ -49,7 +58,7 @@ class EventController extends Controller
                 'description' => 'required', 
                 'place' => 'required',
                 'date' => 'required|date',
-                'image' => 'mimes:jpeg,jpg,png'
+                'image' => 'required|mimes:jpeg,jpg,png'
             )
         );
 

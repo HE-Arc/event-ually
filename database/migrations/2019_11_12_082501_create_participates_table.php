@@ -15,9 +15,9 @@ class CreateParticipatesTable extends Migration
     {
         Schema::create('participates', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('idUser');
+            $table->bigInteger('idUser')->unsigned();
             $table->foreign('idUser')->references('id')->on('users');
-            $table->bigInteger('idEvent');
+            $table->bigInteger('idEvent')->unsigned();
             $table->foreign('idEvent')->references('id')->on('events');
             $table->timestamps();
         });
