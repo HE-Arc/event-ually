@@ -26,7 +26,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('events/{id}','EventController@show')->name('events');
 
-Route::get('events/{idUser}/{id}','EventController@participate');
+Route::get('events/{idUser}/{id}','EventController@participate')->name('subscribe');
 
 Route::get('create','EventController@create')->name('create');
 
