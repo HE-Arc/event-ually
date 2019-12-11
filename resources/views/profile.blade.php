@@ -16,8 +16,13 @@
                 <p class="descriptionEvent">{{ $event->description }}</p>
             </div>
             <p></p>
-            <a href='{{ route("events",[$event->idEvent]) }}'>Détails</a>
-            <a href='{{ route("subscribe",[$event->idUser,$event->idEvent]) }}' class="subscribe">Se désinscrire</a>
+
+            @if (Auth::check())@if (App\Participate::where('idUser', auth()->user()->id)->where('idEvent', $event->idEvent)->first())
+                <a href='{{ route("subscribe",[$event->idUser,$event->idEvent]) }}' class="subscribe">Se désinscrire</a>
+            @else
+                <a href='{{ route("subscribe",[$event->idUser,$event->idEvent]) }}' class="subscribe">S'inscrire</a>
+            @endif
+            @endif
         </div>
 
         @endforeach
