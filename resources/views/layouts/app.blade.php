@@ -54,9 +54,6 @@
                                 </li>
                             @endif
                         @else
-                        <li class="nav-item">
-                                <a class="nav-link" href="{{ route('profile') }}">{{ __('Mon profil') }}</a>
-                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('create') }}">{{ __('Créer événement') }}</a>
                             </li>
@@ -71,6 +68,8 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                                    
+                                    <a class="dropdown-item" href="{{ route('profile') }}">{{ __('Mon profil') }}</a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
