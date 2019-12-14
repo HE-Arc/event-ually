@@ -30,6 +30,15 @@
     right: 20px;
   }
 
+  .imageEvent {
+    float: left;
+    width: 512px;
+    height: 512px;
+    border-radius: 4em;
+    position: sticky;
+    right: 20px;
+  }
+
   .nameEvent{
     font: bold;
     font-size: 1.5em;

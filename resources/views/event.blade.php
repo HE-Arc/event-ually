@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <h1>{{$event->name}}</h1>
-        <img style="float:right" src="{{ asset($event->image) }}" alt="Pas d'image" height="256" width="256" class="image"></img>
+        <img style="float:right" src="{{ asset($event->image) }}" alt="Pas d'image" height="512" width="512" class="imageEvent"></img>
 
         <h3>Date</h3>
         <p>{{$newDate = preg_replace("/(\d+)\D+(\d+)\D+(\d+)/","$3-$2-$1",$event->date)}}</p>
