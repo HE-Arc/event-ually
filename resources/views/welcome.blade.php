@@ -46,6 +46,6 @@
                 @include('eventbox')
             @endforeach
         </div>
-        <div>{{ $events->links() }}</div>
+        <div class="pagination">{{ $events->links() }}</div>
     </div>
 @endsection
