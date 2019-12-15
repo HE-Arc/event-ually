@@ -25,6 +25,24 @@ class EventsTableSeeder extends Seeder
                 'idUser' => 1, //admin
             ],
             [
+                'name' => 'Retour vers le futur',
+                'place' => 'Lybie',
+                'description' => 'Il faut récupérer le plutonium Marty !',
+                'date' => Carbon::create('2001', '12', '06'),
+                'image' => $faker->imageUrl($width = 480, $height = 480),
+                'idCategory' => 1, //neutre
+                'idUser' => 1, //admin
+            ],
+            [
+                'name' => 'Alunage Apollo 11',
+                'place' => 'Lune',
+                'description' => 'Un petit pas pour l\'homme, un bond de géant pour l\'humanité',
+                'date' => Carbon::create('1969', '07', '20'),
+                'image' => $faker->imageUrl($width = 480, $height = 480),
+                'idCategory' => 1, //neutre
+                'idUser' => 1, //admin
+            ],
+            [
                 'name' => 'Paleo',
                 'place' => 'Nyon',
                 'description' => '70eme édition du festival au paléo avec la présence de Grunenwald',
