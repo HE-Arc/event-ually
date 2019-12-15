@@ -24,6 +24,11 @@
     font-size: 20px;
   }
 
+ .over {
+  opacity: 0.5;
+  }
+
+
   .profileDetails{
     margin-top:35px;
     text-align: center;

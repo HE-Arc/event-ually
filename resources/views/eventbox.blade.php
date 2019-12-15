@@ -1,5 +1,9 @@
+@if($event->date > date("Y-m-d"))
 <div class="flex-item">
-    <h3 class="nameEvent">{{ $event->name }}</h3>
+@else
+<div class="flex-item over">
+@endif
+<h3 class="nameEvent">{{ $event->name }}</h3>
     <img src="{{ asset($event->image) }}" alt="Pas d'image" height="128" width="128" class="image"></img>
     <div class="imageBlock">
         <p class="placeEvent"><i class="fas fa-map-marker-alt"></i> {{ $event->place }}</p><br>
@@ -10,10 +14,14 @@
         <p class="descriptionEvent">{{ $event->description }}</p>
     </div>
     <p></p>
-    @if (Auth::check())@if (App\Participate::where('idUser', auth()->user()->id)->where('idEvent', $event->id)->first())
+    @if (Auth::check())
+        @if($event->date > date("Y-m-d"))
+        @if (App\Participate::where('idUser', auth()->user()->id)->where('idEvent', $event->id)->first())
+
             <a href='{{ route("subscribe",[$event->idUser,$event->id]) }}' class="subscribe">Se désinscrire</a>
         @else
             <a href='{{ route("subscribe",[$event->idUser,$event->id]) }}' class="subscribe">S'inscrire</a>
+        @endif
         @endif
     @endif
     <a href='{{ route("events",[$event->id]) }}'>Détails</a>

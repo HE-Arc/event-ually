@@ -14,8 +14,8 @@ class WelcomeController extends Controller
 
 
     public function index(){
-
-        $events = Event::paginate(10);
+        
+        $events = Event::orderBy('date','DESC')->paginate(10);
         return view('welcome')->with('events',$events);
     }
 

@@ -11,10 +11,15 @@
 
 <h1 class="profileDetails">Les événements de {{$user->name}}</h1>
 </div>
+
     <div class="flex-container">
 
         @foreach ($events as $event)
-        <div class="flex-item">
+        @if($event->date > date("Y-m-d"))
+            <div class="flex-item">
+            @else
+            <div class="flex-item over">
+            @endif
             <h3 class="nameEvent">{{ $event->name }}</h3>
             <img src="{{ asset($event->image) }}" alt="Pas d'image" height="128" width="128" class="image"></img>
             <div class="imageBlock">
@@ -27,11 +32,14 @@
             </div>
             <p></p>
 
-            @if (Auth::check())@if (App\Participate::where('idUser', auth()->user()->id)->where('idEvent', $event->idEvent)->first())
-                <a href='{{ route("subscribe",[$event->idUser,$event->idEvent]) }}' class="subscribe">Se désinscrire</a>
-            @else
-                <a href='{{ route("subscribe",[$event->idUser,$event->idEvent]) }}' class="subscribe">S'inscrire</a>
-            @endif
+            @if (Auth::check())
+                @if($event->date > date("Y-m-d"))
+                    @if (App\Participate::where('idUser', auth()->user()->id)->where('idEvent', $event->idEvent)->first())
+                        <a href='{{ route("subscribe",[$event->idUser,$event->idEvent]) }}' class="subscribe">Se désinscrire</a>
+                    @else
+                        <a href='{{ route("subscribe",[$event->idUser,$event->idEvent]) }}' class="subscribe">S'inscrire</a>
+                    @endif
+                @endif
             @endif
             <a href='{{ route("events",[$event->idEvent]) }}'>Détails</a>
 

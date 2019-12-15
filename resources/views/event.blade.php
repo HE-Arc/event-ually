@@ -16,7 +16,7 @@
             @if (Auth::check())
                 <h3>Utilisateurs qui participent:</h3>
                 @foreach($users as $user)
-                    <a href="{{ route('profile',[$user->id]) }}">{{$user->name}}</a>
+                    <a href="{{ route('profile',[$user->id]) }}">{{$user->name}}</a><br>
                 @endforeach
             @endif
         @endif
