@@ -8,16 +8,19 @@
     align-content: space-around;
     margin-top:50px;
   }
+
+  .body-content{
+    background-color: #C4E9E6;
+  }
   
   .flex-item {
     width: 600px;
     height: 300px;
-    background-color: rgb(175, 207, 226);
+    background-color:#81B8B4;
     flex: 0 0 auto;
     margin: 50px;
     padding: 20px;
     border-radius: 1em;
-    border: 0.2em solid rgb(7, 7, 7);
     font-size: 20px;
   }
 
@@ -108,4 +111,14 @@
      position: absolute;
      
  }
+
+ .bg-green {
+  background-color: #3AABA7 !important;
+}
+
+.nav-text{
+  color: black;
+  font-weight: bold;
+  font-size: medium;
+}
   
