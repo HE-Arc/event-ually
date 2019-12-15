@@ -4,12 +4,12 @@
 
 <div id="EventContainer">
 <div class="container">
-<h1>Profil de {{str_replace(['[',']','"'],' ',App\User::where('id',auth()->user()->id)->pluck('name'))}}</h1>
-<h3> Compte créé le : {{str_replace(['[',']','"'],' ',substr(App\User::where('id',auth()->user()->id)->pluck('created_at'),0,12))}}</h3>
-<h3> Adresse email : {{str_replace(['[',']','"'],' ',App\User::where('id',auth()->user()->id)->pluck('email'))}}</h3>
+<h1>Profil de {{$user->name}}</h1>
+<h3> Compte créé le : {{substr($user->created_at,0,10)}}</h3>
+<h3> Adresse email : {{$user->email}}</h3>
 <hr/>
 
-<h1 class="profileDetails">Les événements de {{str_replace(['[',']','"'],' ',App\User::where('id',auth()->user()->id)->pluck('name'))}}</h1>
+<h1 class="profileDetails">Les événements de {{$user->name}}</h1>
 </div>
     <div class="flex-container">
 

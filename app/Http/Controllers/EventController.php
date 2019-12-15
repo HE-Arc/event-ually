@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Storage;
 
 use App\Event;
 
+use App\User;
+
+
 use App\Participate;
 
 class EventController extends Controller
@@ -42,11 +45,12 @@ class EventController extends Controller
         return redirect()->back();
     }
 
-    public function getEventFromIdUser()
+    public function getEventFromId($id)
     {
-        $events = Event::join('participates','events.id','=','participates.idEvent')->where('participates.idUser',auth()->user()->id)->get();
+        $events = Event::join('participates','events.id','=','participates.idEvent')->where('participates.idUser',$id)->get();
+        $user = User::find($id);
 
-        return view('profile',['events'=>$events]);
+        return view('profile',['user'=>$user,'events'=>$events]);
     }
 
 

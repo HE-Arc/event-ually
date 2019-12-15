@@ -30,7 +30,7 @@ Route::get('events/{idUser}/{id}','EventController@participate')->name('subscrib
 
 Route::get('create','EventController@create')->name('create');
 
-Route::get('profile','EventController@getEventFromIdUser')->name('profile');
+Route::get('profile/{id}','EventController@getEventFromId')->name('profile');
 
 Route::post('create', 'EventController@store');
 
