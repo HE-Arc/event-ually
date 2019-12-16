@@ -89,12 +89,12 @@ class EventController extends Controller
     {
         if($value=="null")
         {
-            $events = DB::table('events')->paginate(10);
+            $events = Event::all()->paginate(10);
             $value="";
         }
         else
         {
-            $events = DB::table('events')->where('name', 'like', '%'.$value.'%')->paginate(10);
+            $events = Event::where('name', 'like', '%'.$value.'%')->paginate(10);
         }
         if($request->has('page'))
         {
