@@ -17,7 +17,6 @@
     @if (Auth::check())
         @if($event->date > date("Y-m-d"))
             @if (App\Participate::where('idUser', auth()->user()->id)->where('idEvent', $event->id)->first())
-
                 <a href='{{ route("subscribe",[$event->idUser,$event->id]) }}' class="subscribe">Se désinscrire</a>
             @else
                 <a href='{{ route("subscribe",[$event->idUser,$event->id]) }}' class="subscribe">S'inscrire</a>

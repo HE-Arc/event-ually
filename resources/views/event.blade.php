@@ -20,5 +20,13 @@
                 @endforeach
             @endif
         @endif
+        </br>
+        @if($event->date > date("Y-m-d"))
+            @if (App\Participate::where('idUser', auth()->user()->id)->where('idEvent', $event->id)->first())
+                <a href='{{ route("subscribe",[$event->idUser,$event->id]) }}'>Se désinscrire</a>
+            @else
+                <a href='{{ route("subscribe",[$event->idUser,$event->id]) }}'>S'inscrire</a>
+            @endif
+        @endif
     </div>
 @endsection
