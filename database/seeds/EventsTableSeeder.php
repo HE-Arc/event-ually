@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
+use App\Event;
 
 class EventsTableSeeder extends Seeder
 {
@@ -14,7 +15,7 @@ class EventsTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
         $faker->seed(1950);
-        DB::table('events')->insert([
+        Event::insert([
             [
                 'name' => 'Rencontre Laravel',
                 'place' => 'Campus HE-ARC 2',

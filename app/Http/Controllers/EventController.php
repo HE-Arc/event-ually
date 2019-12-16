@@ -11,7 +11,6 @@ use App\Event;
 
 use App\User;
 
-
 use App\Participate;
 
 class EventController extends Controller
